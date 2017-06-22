@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <root>/ArtCommissions</root>
+    <salt>87e4ht83w6yetw76</salt>
+    
+    <DBMS>
+        <host>x4VBLSGeerra9qNK</host>
+        <username>OvOwls</username>
+        <password>x4VBLSGeerra9qNK</password>
+        <database>OvOCommissions</database>
+        <port>3306</port>
+        
+        <tables>
+            <table ref="AW">Artwork</table>
+            <table ref="CMSS">Commissions</table>
+            <table ref="CMSSAL">Commission_Art_Links</table>
+            <table ref="U">Users</table>
+        </tables>
+    </DBMS>
+
+    <navigation>
+        <tree>
+            <branch type="button" login="false">
+                <title>Gallery</title>
+                <pagelink>Gallery</pagelink>
+                <glyphicon>blackboard</glyphicon>
+            </branch>
+            <branch type="button" login="true">
+                <title>My Commissions</title>
+                <pagelink>My Commissions</pagelink>
+                <glyphicon>alert</glyphicon>
+            </branch>
+            <!--<branch type="button">
+                <title>Disputes</title>
+                <pagelink>Disputes</pagelink>
+                <glyphicon>flag</glyphicon>
+            </branch>-->
+            <!--<branch type="button">
+                <title>Chat</title>
+                <pagelink>Chat</pagelink>
+                <glyphicon>send</glyphicon>
+            </branch>-->
+            <!--<branch type="button">
+                <title>Users</title>
+                <pagelink>Users</pagelink>
+                <glyphicon>user</glyphicon>
+            </branch>-->
+            <!--<branch type="button">
+                <title>My Account</title>
+                <pagelink>My_Account</pagelink>
+                <glyphicon>tower</glyphicon>
+            </branch>-->
+        </tree>
+        
+        <admintree>
+            <branch type="list">
+                <title>Settings</title>
+                <branch type="button">
+                    <title>Punishments</title>
+                    <pagelink>Admin/Settings/Punishments</pagelink>
+                    <glyphicon>alert</glyphicon>
+                </branch>
+                <branch type="button">
+                    <title>Ranks</title>
+                    <pagelink>Admin/Settings/Ranks</pagelink>
+                    <glyphicon>alert</glyphicon>
+                </branch>
+            </branch>
+            <branch type="button">
+                <title>Staff Overview</title>
+                <pagelink>Admin/Staff</pagelink>
+                <glyphicon>star</glyphicon>
+            </branch>
+            <branch type="button">
+                <title>Users</title>
+                <pagelink>Admin/Users</pagelink>
+                <glyphicon>user</glyphicon>
+            </branch>
+        </admintree>
+    </navigation>
+</settings>

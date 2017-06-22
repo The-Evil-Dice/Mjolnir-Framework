@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PAGES>
+    <page>
+        <main />
+        <title>Gallery</title>
+        <navbar>Navbar.php</navbar>
+        <element>
+            <name>Logout</name>
+            <location>Logout.php</location>
+            <style>Style.css</style>
+        </element>
+        <element>
+            <name>Login</name>
+            <location>Login.php</location>
+            <style>Style.css</style>
+        </element>
+    </page>
+    
+    <!--ADMIN PAGES-->
+    
+    <page>
+        <title>Admin</title>
+        <navbar>Adminbar.php</navbar>
+        <element>
+            <name>Logout</name>
+            <location>Logout.php</location>
+            <style>Style.css</style>
+        </element>
+    </page>
+</PAGES>

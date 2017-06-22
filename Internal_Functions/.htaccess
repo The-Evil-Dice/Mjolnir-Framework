@@ -1,0 +1,3 @@
+<files *.xml>
+    deny from all
+</files>
