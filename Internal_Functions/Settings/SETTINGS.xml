@@ -43,26 +43,6 @@
                 <pagelink>My Commissions</pagelink>
                 <glyphicon>alert</glyphicon>
             </branch>
-            <!--<branch type="button">
-                <title>Disputes</title>
-                <pagelink>Disputes</pagelink>
-                <glyphicon>flag</glyphicon>
-            </branch>-->
-            <!--<branch type="button">
-                <title>Chat</title>
-                <pagelink>Chat</pagelink>
-                <glyphicon>send</glyphicon>
-            </branch>-->
-            <!--<branch type="button">
-                <title>Users</title>
-                <pagelink>Users</pagelink>
-                <glyphicon>user</glyphicon>
-            </branch>-->
-            <!--<branch type="button">
-                <title>My Account</title>
-                <pagelink>My_Account</pagelink>
-                <glyphicon>tower</glyphicon>
-            </branch>-->
         </tree>
         
         <admintree>

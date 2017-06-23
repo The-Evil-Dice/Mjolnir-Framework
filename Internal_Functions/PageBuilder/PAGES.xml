@@ -3,16 +3,14 @@
     <page>
         <main />
         <title>Gallery</title>
-        <navbar>Navbar.php</navbar>
+        <navbar>Navbar</navbar>
         <element>
             <name>Logout</name>
-            <location>Logout.php</location>
-            <style>Style.css</style>
+            <style>Default</style>
         </element>
         <element>
             <name>Login</name>
-            <location>Login.php</location>
-            <style>Style.css</style>
+            <style>Default</style>
         </element>
     </page>
     
@@ -20,11 +18,10 @@
     
     <page>
         <title>Admin</title>
-        <navbar>Adminbar.php</navbar>
+        <navbar>Adminbar</navbar>
         <element>
             <name>Logout</name>
-            <location>Logout.php</location>
-            <style>Style.css</style>
+            <style>Default</style>
         </element>
     </page>
 </PAGES>

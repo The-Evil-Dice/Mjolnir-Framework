@@ -43,18 +43,18 @@ class PageBuilder {
     }
 
     public function buildHeader() {
-        include __DIR__ . '/Elements/Header.php';
+        include __DIR__ . '/Elements/Core/Header.php';
     }
 
     public function getNavbar($page) {
-        include __DIR__ . "/Elements/$page->navbar";
+        include __DIR__ . "/Elements/Navbars/$page->navbar.php";
     }
 
     public function buildContent($page) {
         $elements = $this->getPageElements($page);
         
         foreach($elements as $element){
-            include __DIR__ . "/Elements/$element->location";
+            include __DIR__ . "/Elements/$element->name.php";
         }
     }
 
