@@ -61,41 +61,17 @@ class Functions {
         return $connection;
     }
 
-    public function getTable($tablename = NULL) {
-        global $_TABLES;
-        if ($tablename == NULL) {
-            return $_TABLES;
-        }
-
-        return $_TABLES[$tablename];
-    }
-
     public function login($username, $passwordHash) {
-        $accountsTable = $this->getTable('Accounts');
-        $usernames = $this->getTable('Usernames');
+        global $settings;
+        $users = $settings->getTable('U');
 
-        $command = "SELECT UserID FROM $usernames WHERE Username = '$username' ORDER BY UsernameID desc LIMIT 1;";
-        $query1 = mysqli_query($this->getConnection(), $command) or die(mysqli_error());
+        $command = "SELECT user_ID, FROM $users WHERE username = '$username' AND password = '$passwordHash';";
+        $query = mysqli_query($this->getConnection(), $command) or die(mysqli_error());
 
-        $userExists = (mysqli_num_rows($query1) > 0);
+        $loginCheck = (mysqli_num_rows($query) > 0);
 
-        if (!$userExists) {
-            return array(false, "Incorrect Username!");
-        }
-
-        $userID = mysqli_fetch_row($query1)[0];
-
-        $command = "SELECT * FROM $accountsTable"
-                . " LEFT JOIN $usernames ON $accountsTable.UserID=$usernames.UserID"
-                . " WHERE $accountsTable.UserID = '$userID' AND Username = '$username' ORDER BY UsernameID desc LIMIT 1;";
-        $query2 = mysqli_query($this->getConnection(), $command) or die(mysqli_error());
-
-        $result = mysqli_fetch_row($query2);
-
-        $passwordCheck = $result[1] == $passwordHash;
-
-        if (!$passwordCheck) {
-            return array(false, "Incorrect Password!");
+        if (!$loginCheck) {
+            return array(false, "Incorrect Username or Password!");
         }
 
         return array(true, array($result[0], $result[3], $result[4]));

@@ -2,6 +2,13 @@
 <settings>
     <root>/ArtCommissions</root>
     <salt>87e4ht83w6yetw76</salt>
+    <loginSessionArray>
+        <user_ID>U.user_ID</user_ID>
+        <username>U.username</username>
+        <email>U.email</email>
+        <rank>U.admin</rank>
+        <avatar>U.avatar</avatar>
+    </loginSessionArray>
     
     <DBMS>
         <host>x4VBLSGeerra9qNK</host>

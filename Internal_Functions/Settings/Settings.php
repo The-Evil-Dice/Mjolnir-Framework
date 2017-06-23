@@ -19,5 +19,17 @@ class Settings {
     public function getRoot() {
         return $this->getSettings()->root;
     }
+    
+    public function getTable($tablename = "") {
+        if ($tablename == "") {
+            return $this->getSettings()->DBMS->tables;
+        } else {
+            foreach ($this->getSettings()->DBMS->tables as $table) {
+                if($table->attributes()['ref'] == $tablename) {
+                    return $table;
+                }
+            }
+        }
+    }
 
 }
