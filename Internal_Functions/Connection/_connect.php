@@ -1,7 +1,5 @@
 <?php
 
-include_once __DIR__ . '/../Settings/Settings.php';
-
 session_start(); //Begins the user's session, which is used to store their userdata, and identifies them when multiple users are accessing the webapp.
 
 $_TABLES = array(

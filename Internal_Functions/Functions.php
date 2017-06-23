@@ -1,7 +1,5 @@
 <?php
 
-include_once 'Connection/_connect.php';
-
 if (isset($_POST['login'])) {
     $functions = new Functions();
     
@@ -48,7 +46,9 @@ class Functions {
     }
 
     public function getSettings() {
-        return Settings::getInstance()->getSettings();
+        global $settings;
+
+        return $settings->getSettings();
     }
 
     public function getRoot() {

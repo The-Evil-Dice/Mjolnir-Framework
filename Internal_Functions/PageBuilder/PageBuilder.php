@@ -1,7 +1,5 @@
 <?php
 
-include_once 'Internal_Functions/Functions.php';
-
 class PageBuilder {
 
     protected static $_instance;
