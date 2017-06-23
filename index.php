@@ -13,7 +13,7 @@ $page = $_SERVER['PATH_INFO'];
 $page = trim($page, "/");
 
 if ($page == "") {
-    $page = stripslashes($pageBuilder->getInstance()->getMainPage());
+    $page = stripslashes($pageBuilder::getInstance()->getMainPage());
 }
 
-$pageBuilder->getInstance()->buildPage($page);
+$pageBuilder::getInstance()->buildPage($page);
