@@ -16,6 +16,12 @@
             <table ref="CMSSAL">Commission_Art_Links</table>
             <table ref="U">Users</table>
         </tables>
+        
+        <loginTable>
+            <ref>U</ref>
+            <usernameField>username</usernameField>
+            <passwordField>password</passwordField>
+        </loginTable>
     </DBMS>
 
     <navigation>

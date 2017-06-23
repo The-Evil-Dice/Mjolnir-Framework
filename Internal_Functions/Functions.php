@@ -21,10 +21,10 @@ if (isset($_POST['login'])) {
     
     if ($loginAttempt[0]) {
         $_SESSION['User'] = $loginAttempt[1];
-        header("Location: ". $functions::getInstance()->getRoot() ."/Dashboard/");
+        header("Location: ". $functions::getInstance()->getRoot().
+                "/".$pageBuilder::getInstance()->getMainPage());
     } else {
         $_SESSION['Error'] = $loginAttempt[1];
-        //print $password[1].$password[0];
         header("Location: ". $functions::getInstance()->getRoot());
     }
 } else if (isset($_POST['logout'])) {
