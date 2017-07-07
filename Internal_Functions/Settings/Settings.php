@@ -20,6 +20,20 @@ class Settings {
         return $this->getSettings()->root;
     }
     
+    public function getLoginTable() {
+        return $this->getTable(
+                $this->getSettings()->DBMS->loginTable->ref
+                );
+    }
+    
+    public function getLoginUsernameField() {
+        return $this->getSettings()->DBMS->loginTable->usernameField;
+    }
+    
+    public function getLoginPasswordField() {
+        return $this->getSettings()->DBMS->loginTable->passwordField;
+    }
+    
     public function getTable($tablename = "") {
         if ($tablename == "") {
             return $this->getSettings()->DBMS->tables;

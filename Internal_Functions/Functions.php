@@ -63,16 +63,18 @@ class Functions {
 
     public function login($username, $passwordHash) {
         global $settings;
-        $users = $settings->getTable('U');
+        $users = $settings->getTable($settings->getLoginTable());
 
-        $command = "SELECT user_ID, FROM $users WHERE username = '$username' AND password = '$passwordHash';";
+        $command = "SELECT * FROM $users WHERE username = '$username' AND password = '$passwordHash';";
         $query = mysqli_query($this->getConnection(), $command) or die(mysqli_error());
 
-        $loginCheck = (mysqli_num_rows($query) > 0);
+        $loginCheck = (mysqli_num_rows($query) == 0);
 
         if (!$loginCheck) {
             return array(false, "Incorrect Username or Password!");
         }
+        
+        $result = mysqli_fetch_assoc($query);
 
         return array(true, array($result[0], $result[3], $result[4]));
     }
@@ -81,7 +83,8 @@ class Functions {
         if (isset($_SESSION['User'])) {
             return true;
         }
-        //header("Location: ". $this->getRoot() ."/index.php");
         return false;
     }
 }
+
+include_once "Additional_Functions.php";
