@@ -32,7 +32,7 @@
     </DBMS>
 
     <navigation>
-        <tree>
+        <tree nav="Navbar">
             <branch type="button" login="false">
                 <title>Gallery</title>
                 <pagelink>Gallery</pagelink>
@@ -45,7 +45,7 @@
             </branch>
         </tree>
         
-        <admintree>
+        <tree nav="Adminbar">
             <branch type="list">
                 <title>Settings</title>
                 <branch type="button">
@@ -69,6 +69,6 @@
                 <pagelink>Admin/Users</pagelink>
                 <glyphicon>user</glyphicon>
             </branch>
-        </admintree>
+        </tree>
     </navigation>
 </settings>
