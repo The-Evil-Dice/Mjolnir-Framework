@@ -24,4 +24,12 @@
             <style>Default</style>
         </element>
     </page>
+    <page>
+        <title>Admin/User/#</title>
+        <navbar>Adminbar</navbar>
+        <element>
+            <name>Logout</name>
+            <style>Default</style>
+        </element>
+    </page>
 </PAGES>
