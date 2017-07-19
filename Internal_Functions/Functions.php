@@ -61,12 +61,17 @@ class Functions {
         return $connection;
     }
 
-    public function login($username, $passwordHash) {
+    public function login($usernameString, $passwordHash) {
         global $settings;
         $users = $settings->getTable($settings->getLoginTable());
 
-        $command = "SELECT * FROM $users WHERE username = '$username' AND password = '$passwordHash';";
-        $query = mysqli_query($this->getConnection(), $command) or die(mysqli_error());
+        $command = $this->getConnection()
+                ->prepare("SELECT * FROM $users WHERE username = ? AND password = ?;");
+        $command->bind_param($usernameString, $username);
+        $command->bind_param($passwordHash, $password);
+        
+        $command->execute();
+        $query = $command->get_result();
 
         $loginCheck = (mysqli_num_rows($query) == 0);
 
